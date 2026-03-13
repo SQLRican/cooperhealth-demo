@@ -1,0 +1,60 @@
+expression International =
+		let
+		    Source = Folder.Files("D:\Training Content\DIAD - Updated\Attendee\Data\InternationalSales"),
+		    #"Invoke Custom Function1" = Table.AddColumn(Source, "Transform File from International", each #"Transform File from International"([Content])),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+		    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File from International"}),
+		    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File from International", Table.ColumnNames(#"Transform File from International"(#"Sample File"))),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"ProductID", Int64.Type}, {"Date", type date}, {"Zip", type text}, {"Units", Int64.Type}, {"Revenue", type number}, {"Country", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Source.Name"})
+		in
+		    #"Removed Columns"
+	lineageTag: 446fd0f8-d23e-4f54-9de6-3334de29be24
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		    Source = Folder.Files("D:\Training Content\DIAD - Updated\Attendee\Data\InternationalSales"),
+		    Navigation1 = Source{0}[Content]
+		in
+		    Navigation1
+	lineageTag: cf9973fd-f234-4c45-bf5d-218f9f1a96e5
+	queryGroup: 'Transform File from International\Sample Query'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Sample File Parameter1' = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 75d47371-392e-4f81-ae3a-4498518679d0
+	queryGroup: 'Transform File from International\Sample Query'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File from International' =
+		let
+		    Source = Csv.Document(#"Sample File Parameter1",[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+	lineageTag: e40ec296-934e-404c-8215-ad24bf9b8731
+	queryGroup: 'Transform File from International'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transform File from International' =
+		let
+		    Source = (#"Sample File Parameter1" as binary) => let
+		    Source = Csv.Document(#"Sample File Parameter1",[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File from International""}" ]
+	lineageTag: 5c1c9254-32b7-40f8-ae0f-dd047dd5f175
+	queryGroup: 'Transform File from International'
+
+	annotation PBI_ResultType = Function
+

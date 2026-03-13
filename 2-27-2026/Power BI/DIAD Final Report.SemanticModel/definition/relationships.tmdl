@@ -1,0 +1,21 @@
+relationship 839079ba-3ccd-4cbe-b9fa-39468b0a002e
+	fromColumn: Sales.ProductID
+	toColumn: Product.ProductID
+
+relationship 7d4021f6-063d-4b8b-8204-0f459f2b7ae1
+	fromColumn: Product.ManufacturerID
+	toColumn: Manufacturer.ManufacturerID
+
+relationship 8b2d32f6-0b69-4786-8d9b-6cd354f53d16
+	fromColumn: Sales.ZipCountry
+	toColumn: Geography.ZipCountry
+
+relationship 41883c9b-fb37-48c5-b0d3-d430c59916a0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_f2aaeb12-f2fc-4fd7-b1fc-85a61b397582.Date
+
+relationship 8181fce8-ac35-4176-a68e-239fe409d065
+	fromColumn: Sales.Date
+	toColumn: Date.Date
+

@@ -1,0 +1,89 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "df_Move_AdventureWorksDW_tables",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Customer": {
+      "queryId": "08176666-1708-4f2a-85e1-f3fff21492ec",
+      "queryName": "Customer",
+      "loadEnabled": false
+    },
+    "Date": {
+      "queryId": "f0969f16-6767-422f-abf8-127f07cea104",
+      "queryName": "Date",
+      "loadEnabled": false
+    },
+    "Geography": {
+      "queryId": "cbe13fa2-bf14-4362-9541-63cc5f1656c2",
+      "queryName": "Geography",
+      "loadEnabled": false
+    },
+    "Product": {
+      "queryId": "2f93067e-230e-4a3b-a320-351d9723802b",
+      "queryName": "Product",
+      "loadEnabled": false
+    },
+    "SalesTerritory": {
+      "queryId": "1ec60fd0-942e-4f04-8b1a-e1316290c01d",
+      "queryName": "SalesTerritory",
+      "loadEnabled": false
+    },
+    "InternetSales": {
+      "queryId": "b99317ab-2b92-4825-85d6-42977bc751b6",
+      "queryName": "InternetSales",
+      "loadEnabled": false
+    },
+    "Customer_DataDestination": {
+      "queryId": "5c5888b6-0da8-4178-a02d-43d708e051d7",
+      "queryName": "Customer_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Date_DataDestination": {
+      "queryId": "63b0824c-39c9-40d2-b6e9-cc65ebda4ced",
+      "queryName": "Date_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Geography_DataDestination": {
+      "queryId": "ebf9ec6f-e3e8-430f-97ef-35fd34c8a28e",
+      "queryName": "Geography_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Product_DataDestination": {
+      "queryId": "db122b17-d4c5-47dd-a9be-b22b384afdc7",
+      "queryName": "Product_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "SalesTerritory_DataDestination": {
+      "queryId": "d931bd24-3621-4e3d-9480-9238c0b86cf0",
+      "queryName": "SalesTerritory_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "InternetSales_DataDestination": {
+      "queryId": "136d12c2-f0c1-4560-934a-9799550d9dcc",
+      "queryName": "InternetSales_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "pragmaticworkspublic.database.windows.net;AdventureWorksDW",
+      "kind": "SQL",
+      "connectionId": "{\"ClusterId\":\"c72fdc04-78fb-4ade-936e-e2782b8e5be7\",\"DatasourceId\":\"237947c0-d5e8-4f98-b82c-b607103a352d\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"c72fdc04-78fb-4ade-936e-e2782b8e5be7\",\"DatasourceId\":\"bc4d0bd8-49ac-4129-9c7f-1a4dd40ae565\"}"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+table Sales
+	lineageTag: 4cb58fec-c6f9-4f04-92bf-7b1491267dd5
+
+	measure 'PY Sales' = CALCULATE(SUM(Sales[Revenue]),SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: bd49c349-5773-4b88-b15e-a01d393ee9a0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure '% Growth' = DIVIDE(SUM(Sales[Revenue])-[PY Sales],[PY Sales])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 07ca62c6-46a2-4d74-9100-9ab7fb79ed8f
+
+	measure Bar = SUM(Sales[Revenue])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 06e056db-a8e8-4cf6-a24e-e698c7d7b66b
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'VanArsdel Sales' = CALCULATE(SUM(Sales[Revenue]),Manufacturer[ManufacturerID]=7)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 72523ada-d3b0-4f8a-91b1-71e1f2a3c623
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Sales = SUM(Sales[Revenue])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 46bda03e-23e6-495c-9f17-de0d6a973627
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'VanArsdel Market Share' = DIVIDE([VanArsdel Sales],Sales[Sales])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e1e2c8fb-e5c1-4fbe-a4e2-add7fe9dac3b
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f6412d0-6d25-4fa2-a1ed-473b5fedd3aa
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 88d76650-26be-4fae-8170-3b4aecf50e75
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Zip
+		dataType: string
+		lineageTag: ab5fe539-d67c-49cc-8f97-167a301c3806
+		summarizeBy: none
+		sourceColumn: Zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d1d7463-c17e-43f7-bdbd-764f4461a0f7
+		summarizeBy: sum
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 74902c25-b6d7-4f50-8ac3-edf3e251a89b
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Country
+		dataType: string
+		lineageTag: c7c968ad-7f8f-4e7b-bbad-f5201cc50ad3
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCountry = Sales[Zip]&"|"&Sales[Country]
+		lineageTag: 846bfca9-ad4f-4cdf-bfd8-b162327a4801
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales-1df7acfd-907b-46de-bdfe-9e91e0162f1f = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Training Content\DIAD - Updated\Attendee\Data\USSales\Sales.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductID", Int64.Type}, {"Date", type date}, {"Zip", type text}, {"Units", Int64.Type}, {"Revenue", type number}}),
+				    #"Appended Query" = Table.Combine({#"Changed Type", International}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Appended Query", "Custom", each if [Country] = null then "USA" else [Country]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Conditional Column",{"Country"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Custom", "Country"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_QueryRelationships = {"columnCount":6,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/Sales/Appended Query.{ProductID,0}","Section1/Sales/Appended Query.{Date,1}","Section1/Sales/Appended Query.{Zip,2}","Section1/Sales/Appended Query.{Units,3}","Section1/Sales/Appended Query.{Revenue,4}","Section1/Sales/Added Conditional Column.{Custom,6}"],"ColumnCount":6,"KeyColumnNames":[],"ColumnIdentities":["Section1/Sales/Appended Query.{ProductID,0}","Section1/Sales/Appended Query.{Date,1}","Section1/Sales/Appended Query.{Zip,2}","Section1/Sales/Appended Query.{Units,3}","Section1/Sales/Appended Query.{Revenue,4}","Section1/Sales/Added Conditional Column.{Custom,6}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Table
+

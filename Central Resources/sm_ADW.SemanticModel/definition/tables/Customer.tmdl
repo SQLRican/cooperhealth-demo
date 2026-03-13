@@ -1,0 +1,274 @@
+table Customer
+	lineageTag: 35a25c82-0b1c-4c9f-9255-d3df21ab6498
+	sourceLineageTag: [adw].[Customer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: aa42bbac-9b1a-42ed-97e8-d7c83bc497c3
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: df069c03-e6ee-4e6c-83bc-fafae71e1d5b
+		sourceLineageTag: GeographyKey
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAlternateKey
+		dataType: string
+		lineageTag: 91fb0d45-20d4-44ad-85d1-de6389f274ea
+		sourceLineageTag: CustomerAlternateKey
+		summarizeBy: none
+		sourceColumn: CustomerAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 041c8479-cb20-4a25-9627-76d8f6e2e970
+		sourceLineageTag: Title
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 58c0210f-9c50-46b9-bdbf-306fbe4637b7
+		sourceLineageTag: FirstName
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: 7d03f931-84d5-4bd6-a277-38133129c036
+		sourceLineageTag: MiddleName
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 783b5243-95f9-4998-ad28-faba5fc8f21b
+		sourceLineageTag: LastName
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: d1cdb4bf-a272-450b-9218-62a9ae2ea39d
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameStyle
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 96f68a48-da62-48d7-a0d0-58920fca7408
+		sourceLineageTag: NameStyle
+		summarizeBy: none
+		sourceColumn: NameStyle
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b8713e05-326c-4d5a-a18e-9acaaf36186b
+		sourceLineageTag: BirthDate
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 33572186-4a05-4ec7-8c77-9cc309c1bf90
+		sourceLineageTag: Age
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Breakdown'
+		dataType: string
+		lineageTag: f1c3491e-ea7c-4c6b-8e46-7ae6ac71a2b0
+		sourceLineageTag: Age Breakdown
+		summarizeBy: none
+		sourceColumn: Age Breakdown
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatus
+		dataType: string
+		lineageTag: 880c7491-c37e-48f1-90c0-8269bf07c95b
+		sourceLineageTag: MaritalStatus
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suffix
+		dataType: string
+		lineageTag: 51187d42-8914-4b82-8b95-ef1911abb8e6
+		sourceLineageTag: Suffix
+		summarizeBy: none
+		sourceColumn: Suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: fee0d396-b37b-4d21-83c7-d2ad98123447
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: fab57a2e-d164-4516-9ca7-8f8caa160424
+		sourceLineageTag: EmailAddress
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearlyIncome
+		dataType: double
+		lineageTag: 6e3601d6-7c78-422f-946e-de4b5a5cc98b
+		sourceLineageTag: YearlyIncome
+		summarizeBy: sum
+		sourceColumn: YearlyIncome
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		lineageTag: ef0c5722-7c4f-4603-9d2b-005f401e4213
+		sourceLineageTag: TotalChildren
+		summarizeBy: sum
+		sourceColumn: TotalChildren
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberChildrenAtHome
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dfb73f0-fdfe-4fc6-85d0-d304260fa25d
+		sourceLineageTag: NumberChildrenAtHome
+		summarizeBy: sum
+		sourceColumn: NumberChildrenAtHome
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishEducation
+		dataType: string
+		lineageTag: 353809fd-3d2d-4090-a4a9-2e5249336421
+		sourceLineageTag: EnglishEducation
+		summarizeBy: none
+		sourceColumn: EnglishEducation
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishOccupation
+		dataType: string
+		lineageTag: 3e7defb4-25cb-4bc4-829b-c7740fc26594
+		sourceLineageTag: EnglishOccupation
+		summarizeBy: none
+		sourceColumn: EnglishOccupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column HouseOwnerFlag
+		dataType: string
+		lineageTag: 19806e91-3d73-4d0a-8ee4-34a686c914f7
+		sourceLineageTag: HouseOwnerFlag
+		summarizeBy: none
+		sourceColumn: HouseOwnerFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberCarsOwned
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e381bd6-5057-4d80-bb5c-b607ab7ffff5
+		sourceLineageTag: NumberCarsOwned
+		summarizeBy: sum
+		sourceColumn: NumberCarsOwned
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		lineageTag: 43e58fe0-da34-4349-96a9-8cc8b9c2d9ce
+		sourceLineageTag: AddressLine1
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine2
+		dataType: string
+		lineageTag: 1f59c974-10d4-4aca-ab95-e3d3a1ec228f
+		sourceLineageTag: AddressLine2
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: bddf03d7-060d-4bdf-a853-b95ec4be4f30
+		sourceLineageTag: Phone
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateFirstPurchase
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e173c0e8-0cdf-4250-99f6-a8494592d9b2
+		sourceLineageTag: DateFirstPurchase
+		summarizeBy: none
+		sourceColumn: DateFirstPurchase
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommuteDistance
+		dataType: string
+		lineageTag: ea1f1076-664a-4b92-955c-4137597af908
+		sourceLineageTag: CommuteDistance
+		summarizeBy: none
+		sourceColumn: CommuteDistance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer = entity
+		mode: directLake
+		source
+			entityName: Customer
+			schemaName: adw
+			expressionSource: 'DirectLake - lh_CooperHealth_CentralData'
+

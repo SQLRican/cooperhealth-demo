@@ -1,0 +1,87 @@
+table Product
+	lineageTag: bb4ddb2b-a791-4a41-9d75-bfec23562627
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 463a87d8-c156-4612-b2f4-242fe6e48f15
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 460db3fd-cf03-4d42-8270-6a86a1472a7e
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManufacturerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1190bed6-736f-4e1e-bbb7-3f293ffeb090
+		summarizeBy: none
+		sourceColumn: ManufacturerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 5e1c66e5-6aea-4752-8e25-397b666d8b56
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 3b916fd1-b897-4f9d-85c6-116dc96c8271
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: string
+		lineageTag: da542512-9d95-4934-9164-90fa6774dc42
+		summarizeBy: none
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Product Hierarchy'
+		lineageTag: 2ce97ed0-7c0b-450c-8e87-d5e08d3fa573
+
+		level Category
+			lineageTag: 372c6d5f-5ae7-4408-9c92-bc4fcb171d1f
+			column: Category
+
+		level Segment
+			lineageTag: 51be0a12-b08f-4327-bd44-f7ead9d85d70
+			column: Segment
+
+		level Product
+			lineageTag: 6224b04e-abb4-4d9d-a748-b43906adec85
+			column: Product
+
+	partition Product-3e3a7ec1-7bc9-4431-a1e3-ee49cde78b66 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\Training Content\DIAD - Updated\Attendee\Data\USSales\bi_dimensions.xlsx"), null, true),
+				    Product_Table = Source{[Item="Product_Table",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Product_Table,{{"ProductID", Int64.Type}, {"Product", type text}, {"Category", type text}, {"ManufacturerID", Int64.Type}, {"Price", type text}}),
+				    #"Inserted Text Before Delimiter" = Table.AddColumn(#"Changed Type", "Text Before Delimiter", each Text.BeforeDelimiter([Product], "|"), type text),
+				    #"Inserted Text After Delimiter" = Table.AddColumn(#"Inserted Text Before Delimiter", "Text After Delimiter", each Text.AfterDelimiter([Product], "|"), type text),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Text After Delimiter",{"Product"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Text Before Delimiter", "Product"}, {"Text After Delimiter", "Segment"}}),
+				    #"Filled Down" = Table.FillDown(#"Renamed Columns",{"Category"})
+				in
+				    #"Filled Down"
+
+	annotation PBI_QueryRelationships = {"columnCount":6,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/Product/Filled Down.{ProductID,0}","Section1/Product/Filled Down.{Category,1}","Section1/Product/Filled Down.{ManufacturerID,2}","Section1/Product/Filled Down.{Price,3}","Section1/Product/Filled Down.{Product,4}","Section1/Product/Filled Down.{Segment,5}"],"ColumnCount":6,"KeyColumnNames":[],"ColumnIdentities":["Section1/Product/Filled Down.{ProductID,0}","Section1/Product/Filled Down.{Category,1}","Section1/Product/Filled Down.{ManufacturerID,2}","Section1/Product/Filled Down.{Price,3}","Section1/Product/Filled Down.{Product,4}","Section1/Product/Filled Down.{Segment,5}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Table
+

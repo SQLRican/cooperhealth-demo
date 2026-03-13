@@ -1,0 +1,58 @@
+table SalesTerritory
+	lineageTag: 072fffa3-c598-44fb-9ae7-b940bbda7b16
+	sourceLineageTag: [adw].[SalesTerritory]
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b176fd2-e57c-45b5-9b35-2c88ab0d474a
+		sourceLineageTag: SalesTerritoryKey
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a31a6a6-5ea4-4d8c-8752-8a378fd96365
+		sourceLineageTag: SalesTerritoryAlternateKey
+		summarizeBy: none
+		sourceColumn: SalesTerritoryAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryRegion
+		dataType: string
+		lineageTag: d37285c1-4a5b-4813-94c8-9a2fba97d83e
+		sourceLineageTag: SalesTerritoryRegion
+		summarizeBy: none
+		sourceColumn: SalesTerritoryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryCountry
+		dataType: string
+		lineageTag: c2bef7fa-4917-4cd8-b352-f1a8ccdfc78b
+		sourceLineageTag: SalesTerritoryCountry
+		summarizeBy: none
+		sourceColumn: SalesTerritoryCountry
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryGroup
+		dataType: string
+		lineageTag: c24b919e-dca0-43b8-b27e-9fc9d68d5efa
+		sourceLineageTag: SalesTerritoryGroup
+		summarizeBy: none
+		sourceColumn: SalesTerritoryGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SalesTerritory = entity
+		mode: directLake
+		source
+			entityName: SalesTerritory
+			schemaName: adw
+			expressionSource: 'DirectLake - lh_CooperHealth_CentralData'
+

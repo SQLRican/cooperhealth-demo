@@ -1,0 +1,147 @@
+table dimension_date
+	lineageTag: 22e9ee4b-bc24-4a2e-8383-5229aaca7cf2
+	sourceLineageTag: [dbo].[dimension_date]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a73810ff-f147-4885-aacd-41e90318ca81
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e27b8d7-da79-4487-a9da-dbde8600e3de
+		sourceLineageTag: DayNumber
+		summarizeBy: none
+		sourceColumn: DayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: a2f27a48-e4b4-422b-89a2-25d59c2b7160
+		sourceLineageTag: Day
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 7c4bd947-1618-4e25-ba91-03900cd8a80b
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: CalendarMonthNumber
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortMonth
+		dataType: string
+		lineageTag: dcdc1c51-19b0-47e0-b6d3-1052e9e7b472
+		sourceLineageTag: ShortMonth
+		summarizeBy: none
+		sourceColumn: ShortMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: d0f72983-0688-4620-b534-dda4ca91f444
+		sourceLineageTag: CalendarMonthNumber
+		summarizeBy: none
+		sourceColumn: CalendarMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthLabel
+		dataType: string
+		lineageTag: 240ab45f-1138-441a-87a6-ee8adca91c5e
+		sourceLineageTag: CalendarMonthLabel
+		summarizeBy: none
+		sourceColumn: CalendarMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 6207085c-925d-453c-8e3e-181e5d303940
+		sourceLineageTag: CalendarYear
+		summarizeBy: none
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYearLabel
+		dataType: string
+		lineageTag: 10c30079-bb12-44fe-8a4d-01eb3a86743d
+		sourceLineageTag: CalendarYearLabel
+		summarizeBy: none
+		sourceColumn: CalendarYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bac04c0-a5b5-40bf-bc68-853cc11b9541
+		sourceLineageTag: FiscalMonthNumber
+		summarizeBy: none
+		sourceColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthLabel
+		dataType: string
+		lineageTag: dde1e0d3-fe5b-4a1f-a2fd-330b6a1b7c94
+		sourceLineageTag: FiscalMonthLabel
+		summarizeBy: none
+		sourceColumn: FiscalMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: f0138cb2-dc3d-4bb2-bdc5-8f71e4aa541c
+		sourceLineageTag: FiscalYear
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearLabel
+		dataType: string
+		lineageTag: de01d448-cff8-4e17-9dd9-d9be8a6b946e
+		sourceLineageTag: FiscalYearLabel
+		summarizeBy: none
+		sourceColumn: FiscalYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISOWeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 51783a9f-c487-4891-aed3-2b0937ff9490
+		sourceLineageTag: ISOWeekNumber
+		summarizeBy: none
+		sourceColumn: ISOWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_date = entity
+		mode: directLake
+		source
+			entityName: dimension_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWImporter_597'
+

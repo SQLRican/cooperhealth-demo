@@ -1,0 +1,9 @@
+expression 'DirectLake - WWImporter_597' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/c5f0b499-f295-4325-92a8-87b7d3800459/19895240-7ad6-4925-b3f9-b95549db2e47", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 069445b8-7262-40c7-b07f-effdccfda172
+
+	annotation PBI_IncludeFutureArtifacts = False
+

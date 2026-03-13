@@ -1,0 +1,164 @@
+table Date
+	lineageTag: f81c9978-fdd1-4051-8458-c0745805a001
+	sourceLineageTag: [adw].[Date]
+	dataCategory: Time
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 14bc4b2b-14e5-470f-98e4-865f79f58c24
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: 3875a0a6-1b09-4c48-9dde-d20e91d6c060
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: 98413b3a-5f3b-4490-a240-ea241146d57c
+		sourceLineageTag: DayNumberOfWeek
+		summarizeBy: none
+		sourceColumn: DayNumberOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishDayNameOfWeek
+		dataType: string
+		lineageTag: 5767304c-5fae-46ec-a23a-bee6552ac9b5
+		sourceLineageTag: EnglishDayNameOfWeek
+		summarizeBy: none
+		sourceColumn: EnglishDayNameOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: 52068355-65b4-42ec-9c10-9556b4ecaf0d
+		sourceLineageTag: DayNumberOfMonth
+		summarizeBy: none
+		sourceColumn: DayNumberOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 0151ca98-c3ec-4f4b-8b1b-ed9c8e140a97
+		sourceLineageTag: DayNumberOfYear
+		summarizeBy: none
+		sourceColumn: DayNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNumberOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f3b0ac2-e475-4074-bfbf-7bd9eab2134e
+		sourceLineageTag: WeekNumberOfYear
+		summarizeBy: none
+		sourceColumn: WeekNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishMonthName
+		dataType: string
+		lineageTag: 9ac3aea0-2ee3-4b10-bc92-808e68a75ff7
+		sourceLineageTag: EnglishMonthName
+		summarizeBy: none
+		sourceColumn: EnglishMonthName
+		sortByColumn: MonthNumberOfYear
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumberOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: a6515b69-0c6d-4dc5-a988-fa883652f480
+		sourceLineageTag: MonthNumberOfYear
+		summarizeBy: none
+		sourceColumn: MonthNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ed37c25-36ef-49ea-8f5e-1a001d6aeb9e
+		sourceLineageTag: CalendarQuarter
+		summarizeBy: none
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: fcb7a462-de66-4301-ac42-44ea98ad68c0
+		sourceLineageTag: CalendarYear
+		summarizeBy: none
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarSemester
+		dataType: int64
+		formatString: 0
+		lineageTag: 5188c64f-ad8e-4676-9a21-79d0eedc9303
+		sourceLineageTag: CalendarSemester
+		summarizeBy: none
+		sourceColumn: CalendarSemester
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 2201e541-c4fd-4270-8a99-801a97f3d4b2
+		sourceLineageTag: FiscalQuarter
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 1abec23e-33b8-49c5-bf81-758065d63c44
+		sourceLineageTag: FiscalYear
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalSemester
+		dataType: int64
+		formatString: 0
+		lineageTag: 839188cb-0a6c-4240-9ad6-02e203604ecb
+		sourceLineageTag: FiscalSemester
+		summarizeBy: none
+		sourceColumn: FiscalSemester
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = entity
+		mode: directLake
+		source
+			entityName: Date
+			schemaName: adw
+			expressionSource: 'DirectLake - lh_CooperHealth_CentralData'
+

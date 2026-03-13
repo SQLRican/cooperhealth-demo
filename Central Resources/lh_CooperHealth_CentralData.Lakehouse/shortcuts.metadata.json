@@ -1,0 +1,14 @@
+[
+  {
+    "name": "delta-parquet",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "fc20ead9-f0f9-4106-a4f4-0c165d7e1d8b",
+        "location": "https://pwadlsfabric.dfs.core.windows.net",
+        "subpath": "/delta-parquet"
+      }
+    }
+  }
+]

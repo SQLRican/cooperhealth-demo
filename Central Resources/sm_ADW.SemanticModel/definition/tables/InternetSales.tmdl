@@ -1,0 +1,365 @@
+table InternetSales
+	lineageTag: ffa1e891-93f8-42db-9663-78434a09171b
+	sourceLineageTag: [adw].[InternetSales]
+
+	measure 'Total Sales' = SUM(InternetSales[SalesAmount])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: fddabf16-f454-485d-bde9-d9040c4aa80f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 195fe82b-9cae-44cb-bd5e-348e57df7817
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDateKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 70bf2eea-ecfd-4fbb-92f1-10a72c6c19c8
+		sourceLineageTag: OrderDateKey
+		summarizeBy: count
+		sourceColumn: OrderDateKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDateKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: b9e31f6b-3ca0-493d-9a4d-6deb070aa73b
+		sourceLineageTag: DueDateKey
+		summarizeBy: count
+		sourceColumn: DueDateKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 5ddf5e44-ed19-46ea-ba29-5f149cc15565
+		sourceLineageTag: ShipDateKey
+		summarizeBy: count
+		sourceColumn: ShipDateKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 269b6009-d289-4996-85c3-cd1b4d1d4bb6
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: dbb49886-5110-4d81-aa53-f4af33a54ed3
+		sourceLineageTag: PromotionKey
+		summarizeBy: count
+		sourceColumn: PromotionKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: e3e79c6c-ede0-4ae2-86aa-6d49f37dab24
+		sourceLineageTag: CurrencyKey
+		summarizeBy: count
+		sourceColumn: CurrencyKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 7b464594-d837-4a2f-9b4a-60c60c179bab
+		sourceLineageTag: SalesTerritoryKey
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderNumber
+		dataType: string
+		displayFolder: Columns
+		lineageTag: cc851432-059d-48bb-b291-f09acd0218a7
+		sourceLineageTag: SalesOrderNumber
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 82680d6c-6829-422c-8a28-46eb5929bb48
+		sourceLineageTag: SalesOrderLineNumber
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevisionNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: dd74daa4-684a-4d3c-ac12-73c5020ddb99
+		sourceLineageTag: RevisionNumber
+		summarizeBy: sum
+		sourceColumn: RevisionNumber
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		displayFolder: Columns
+		lineageTag: 77cfb13d-4eaa-44e0-af30-98455a62d0fa
+		sourceLineageTag: OrderQuantity
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		displayFolder: Columns
+		lineageTag: f1f5ccad-d0fd-424f-9caa-922fb9f6ed7a
+		sourceLineageTag: UnitPrice
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ExtendedAmount
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 0dfcb58c-a278-4748-993e-67cdcb2b31ca
+		sourceLineageTag: ExtendedAmount
+		summarizeBy: sum
+		sourceColumn: ExtendedAmount
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPriceDiscountPct
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 416be6cc-ab89-4dfe-86e4-2bf740be4baf
+		sourceLineageTag: UnitPriceDiscountPct
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscountPct
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiscountAmount
+		dataType: double
+		displayFolder: Columns
+		lineageTag: a76da871-b5b6-4c84-b17f-2128021a1906
+		sourceLineageTag: DiscountAmount
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductStandardCost
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 8466037d-c0b4-4830-a6c9-d596ca12d2ab
+		sourceLineageTag: ProductStandardCost
+		summarizeBy: sum
+		sourceColumn: ProductStandardCost
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TotalProductCost
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 2210937e-9263-4e19-be8f-b77f95a424e3
+		sourceLineageTag: TotalProductCost
+		summarizeBy: sum
+		sourceColumn: TotalProductCost
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalesAmount
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 4757b701-14ff-445a-ab3e-b4c5dc748f15
+		sourceLineageTag: SalesAmount
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxAmt
+		dataType: double
+		displayFolder: Columns
+		lineageTag: 74b1b622-a63f-4fa6-89f0-4b8be78025e9
+		sourceLineageTag: TaxAmt
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Freight
+		dataType: double
+		displayFolder: Columns
+		lineageTag: c22b46e8-64c4-4aa4-87c7-e0817a2c3883
+		sourceLineageTag: Freight
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CarrierTrackingNumber
+		dataType: string
+		displayFolder: Columns
+		lineageTag: 8900b267-ce93-4f3b-8ff6-240aad0e4fe7
+		sourceLineageTag: CarrierTrackingNumber
+		summarizeBy: none
+		sourceColumn: CarrierTrackingNumber
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerPONumber
+		dataType: string
+		displayFolder: Columns
+		lineageTag: 23fed989-20ae-4895-8d83-b0aed7de9de1
+		sourceLineageTag: CustomerPONumber
+		summarizeBy: none
+		sourceColumn: CustomerPONumber
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: Columns
+		lineageTag: e8640241-1a0a-4249-ae8f-0716565c01d3
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDate
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: Columns
+		lineageTag: f3d5f894-dc37-4647-bf5d-ae55ca838961
+		sourceLineageTag: DueDate
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDate
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: Columns
+		lineageTag: 5e63c157-1ad1-4a8d-94fe-7c78f7598e4f
+		sourceLineageTag: ShipDate
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InternetSales = entity
+		mode: directLake
+		source
+			entityName: InternetSales
+			schemaName: adw
+			expressionSource: 'DirectLake - lh_CooperHealth_CentralData'
+

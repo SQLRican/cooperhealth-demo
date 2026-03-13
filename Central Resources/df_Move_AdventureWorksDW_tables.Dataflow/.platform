@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_Move_AdventureWorksDW_tables"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c652846-b56c-a6f9-46e8-cf4224da78bf"
+  }
+}

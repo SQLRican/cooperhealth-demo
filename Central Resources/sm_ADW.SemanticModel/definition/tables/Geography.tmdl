@@ -1,0 +1,75 @@
+table Geography
+	lineageTag: 15cc300d-ae63-4a15-a001-ac9ded5ecb42
+	sourceLineageTag: [adw].[Geography]
+
+	column GeographyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b26734ce-c3e9-4625-a6a6-24efa8b48c3b
+		sourceLineageTag: GeographyKey
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: aea4499f-787f-48ff-ae15-061a24aadac2
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceCode
+		dataType: string
+		lineageTag: d63fe876-ec7f-4783-8230-df08ab9c455f
+		sourceLineageTag: StateProvinceCode
+		summarizeBy: none
+		sourceColumn: StateProvinceCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceName
+		dataType: string
+		lineageTag: e903433f-350c-4e63-b7ac-4ea11d517b44
+		sourceLineageTag: StateProvinceName
+		summarizeBy: none
+		sourceColumn: StateProvinceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionCode
+		dataType: string
+		lineageTag: bab9f333-7199-432c-953c-20264b698fc8
+		sourceLineageTag: CountryRegionCode
+		summarizeBy: none
+		sourceColumn: CountryRegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishCountryRegionName
+		dataType: string
+		lineageTag: cc4c718b-316a-4635-9b0e-16fe78cef38a
+		sourceLineageTag: EnglishCountryRegionName
+		summarizeBy: none
+		sourceColumn: EnglishCountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 0ab5062c-ce54-44f7-af9f-e8fd6d9a4ddb
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Geography = entity
+		mode: directLake
+		source
+			entityName: Geography
+			schemaName: adw
+			expressionSource: 'DirectLake - lh_CooperHealth_CentralData'
+

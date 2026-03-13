@@ -1,0 +1,20 @@
+relationship 55befed0-9d65-409e-284e-de168f369e57
+	fromColumn: InternetSales.OrderDate
+	toColumn: Date.Date
+
+relationship 25da01c9-ccac-9d7d-e2c1-62b17a79a85e
+	fromColumn: InternetSales.CustomerKey
+	toColumn: Customer.CustomerKey
+
+relationship 4ea61b49-27f9-1f54-fd9d-5de0f8977b86
+	fromColumn: InternetSales.SalesTerritoryKey
+	toColumn: SalesTerritory.SalesTerritoryKey
+
+relationship 1260274a-4add-ce0b-9a05-7ded8d505974
+	fromColumn: InternetSales.ProductKey
+	toColumn: Product.ProductKey
+
+relationship 8bad8fa4-0133-3bc6-b675-8ae7d36d2051
+	fromColumn: Customer.GeographyKey
+	toColumn: Geography.GeographyKey
+
