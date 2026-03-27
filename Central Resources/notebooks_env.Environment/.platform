@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
-    "displayName": "sm_ADW_lh"
+    "type": "Environment",
+    "displayName": "notebooks_env",
+    "description": "Environment"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "891c443e-951d-a96e-4d97-62174f36d5f2"
+    "logicalId": "c00d0e72-cdbc-b1bf-4088-b2ba795d144b"
   }
 }

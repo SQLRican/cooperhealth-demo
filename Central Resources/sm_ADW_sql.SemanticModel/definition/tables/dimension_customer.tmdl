@@ -1,0 +1,128 @@
+table dimension_customer
+	lineageTag: d29fded2-df23-400b-a00c-a0adb0fb1191
+	sourceLineageTag: [dbo].[dimension_customer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: aabb645a-e738-4115-a9b7-d7ab4d21cf95
+		sourceLineageTag: CustomerKey
+		summarizeBy: count
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WWICustomerID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: de1d94e7-caa4-4909-ae72-aa6313418f96
+		sourceLineageTag: WWICustomerID
+		summarizeBy: count
+		sourceColumn: WWICustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 586a4b72-8cae-49ad-8949-7f4f9bf3e5bb
+		sourceLineageTag: Customer
+		summarizeBy: none
+		sourceColumn: Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillToCustomer
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0cdb0697-6053-4c8b-930b-5d62d5631e6f
+		sourceLineageTag: BillToCustomer
+		summarizeBy: none
+		sourceColumn: BillToCustomer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6870fe46-2e9d-40a9-8ad2-2439eacb11ee
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column BuyingGroup
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f9227e8f-7f43-4b9e-ae69-c7a4b59cef6d
+		sourceLineageTag: BuyingGroup
+		summarizeBy: none
+		sourceColumn: BuyingGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryContact
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0f68d9b9-da63-447e-9b04-bb68a4415016
+		sourceLineageTag: PrimaryContact
+		summarizeBy: none
+		sourceColumn: PrimaryContact
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3468ebae-cc85-4187-afdc-80a9874edd01
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidFrom
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2195e80b-0ba5-47ce-a3bc-2afde8d42761
+		sourceLineageTag: ValidFrom
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 57c3b03b-58fc-457a-91d9-5eb8e566915e
+		sourceLineageTag: ValidTo
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineageKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6f4a330b-24bc-4f46-954f-571e6e9772e9
+		sourceLineageTag: LineageKey
+		summarizeBy: count
+		sourceColumn: LineageKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_customer = entity
+		mode: directLake
+		source
+			entityName: dimension_customer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
-    "displayName": "sm_ADW_lh"
+    "type": "Notebook",
+    "displayName": "Notebook_KV"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "891c443e-951d-a96e-4d97-62174f36d5f2"
+    "logicalId": "580a11b8-2735-9298-49c8-fbff78bb0440"
   }
 }

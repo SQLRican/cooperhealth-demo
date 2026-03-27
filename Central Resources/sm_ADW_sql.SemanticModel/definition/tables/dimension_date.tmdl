@@ -1,0 +1,160 @@
+table dimension_date
+	lineageTag: 34633235-b0eb-42a5-9344-2cb929a67976
+	sourceLineageTag: [dbo].[dimension_date]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f99990e4-decb-4cc6-a3d6-7e060ab4d347
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5e0b6e53-f184-4109-a5cf-2429a6058024
+		sourceLineageTag: DayNumber
+		summarizeBy: sum
+		sourceColumn: DayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 015ba85b-7c0a-4902-bab1-78e0f3b880ff
+		sourceLineageTag: Day
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c4570dc-5070-4579-a09f-618615277ffa
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortMonth
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eedc1ff3-95b6-4a19-b6b6-b2b4b62f76ff
+		sourceLineageTag: ShortMonth
+		summarizeBy: none
+		sourceColumn: ShortMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8edc6e12-b6aa-443e-acbc-3be515c7a508
+		sourceLineageTag: CalendarMonthNumber
+		summarizeBy: sum
+		sourceColumn: CalendarMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c88152c3-29fb-4dd7-9db4-8c688497b43c
+		sourceLineageTag: CalendarMonthLabel
+		summarizeBy: none
+		sourceColumn: CalendarMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ea616bf0-1ff4-4fc6-b900-5728c0d750f2
+		sourceLineageTag: CalendarYear
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYearLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 764cd351-8aff-44df-98d2-f08d33ad85ba
+		sourceLineageTag: CalendarYearLabel
+		summarizeBy: none
+		sourceColumn: CalendarYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a2acde0e-9f05-48e3-b519-d8a052ccb683
+		sourceLineageTag: FiscalMonthNumber
+		summarizeBy: sum
+		sourceColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b23a416e-e9ae-4cd9-a5b9-06bb9c9bba7a
+		sourceLineageTag: FiscalMonthLabel
+		summarizeBy: none
+		sourceColumn: FiscalMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 47b87360-a882-4c82-a302-6d910ebd20ab
+		sourceLineageTag: FiscalYear
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 839c0921-d1cb-4176-add6-f134ac6895cd
+		sourceLineageTag: FiscalYearLabel
+		summarizeBy: none
+		sourceColumn: FiscalYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISOWeekNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d8f96d26-95ab-4e51-930b-c01192bed217
+		sourceLineageTag: ISOWeekNumber
+		summarizeBy: sum
+		sourceColumn: ISOWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_date = entity
+		mode: directLake
+		source
+			entityName: dimension_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

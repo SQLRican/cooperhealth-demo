@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["DirectLake - lh_CooperHealth_CentralData"]
+annotation PBI_QueryOrder = ["DirectLake - lh_CooperHealth_CentralData","DimEmployee"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -18,4 +18,10 @@ ref table Customer
 ref table Date
 ref table Product
 ref table SalesTerritory
+ref table DimEmployee
+ref table DateTableTemplate_7eb32848-25b5-44ad-aa83-b6480f8e6839
+ref table LocalDateTable_07f29d46-ba4c-4199-b594-83773787616b
+ref table LocalDateTable_f89f71ee-489a-4556-8b75-5836d3f830fa
+ref table LocalDateTable_0b419051-9042-4a48-a6fd-590cca3d58bf
+ref table LocalDateTable_c9f29703-9ceb-4c9d-a9d6-f869464506fb
 

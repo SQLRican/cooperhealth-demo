@@ -18,3 +18,23 @@ relationship 8bad8fa4-0133-3bc6-b675-8ae7d36d2051
 	fromColumn: Customer.GeographyKey
 	toColumn: Geography.GeographyKey
 
+relationship 04343d47-3cb5-4470-81d5-897b2b59ef8f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimEmployee.HireDate
+	toColumn: LocalDateTable_07f29d46-ba4c-4199-b594-83773787616b.Date
+
+relationship 57c55149-6889-4858-8edc-af0f8e2c4e47
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimEmployee.BirthDate
+	toColumn: LocalDateTable_f89f71ee-489a-4556-8b75-5836d3f830fa.Date
+
+relationship 7b2dce33-0514-4960-861e-005b3e0f4d91
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimEmployee.StartDate
+	toColumn: LocalDateTable_0b419051-9042-4a48-a6fd-590cca3d58bf.Date
+
+relationship e1f6a3fa-7166-4154-888b-00679237a293
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimEmployee.EndDate
+	toColumn: LocalDateTable_c9f29703-9ceb-4c9d-a9d6-f869464506fb.Date
+
