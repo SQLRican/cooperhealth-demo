@@ -8,7 +8,7 @@ table dimension_city
 		sourceProviderType: int
 		lineageTag: 8bb17c28-39ec-436d-93bc-25f052fb106e
 		sourceLineageTag: CityKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CityKey
 
 		annotation SummarizationSetBy = Automatic
@@ -19,7 +19,7 @@ table dimension_city
 		sourceProviderType: int
 		lineageTag: d86aeda3-2245-4399-818c-d385b3d55c76
 		sourceLineageTag: WWICityID
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: WWICityID
 
 		annotation SummarizationSetBy = Automatic
@@ -110,7 +110,7 @@ table dimension_city
 		sourceProviderType: bigint
 		lineageTag: b0cf89ba-2735-439e-a54d-00d44cf70744
 		sourceLineageTag: LatestRecordedPopulation
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: LatestRecordedPopulation
 
 		annotation SummarizationSetBy = Automatic
@@ -143,7 +143,7 @@ table dimension_city
 		sourceProviderType: int
 		lineageTag: 3fce803a-5e3e-40f7-acc8-3bc9029773cc
 		sourceLineageTag: LineageKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: LineageKey
 
 		annotation SummarizationSetBy = Automatic

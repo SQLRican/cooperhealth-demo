@@ -19,7 +19,7 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: cfba1d5a-6bfc-42c9-b798-aa3bc529ecbb
 		sourceLineageTag: CityKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CityKey
 
 		annotation SummarizationSetBy = Automatic

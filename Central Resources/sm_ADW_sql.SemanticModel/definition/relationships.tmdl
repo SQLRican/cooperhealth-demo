@@ -1,0 +1,4 @@
+relationship 36ca07d4-efcb-9391-e734-a81e06ae78da
+	fromColumn: fact_sale.CityKey
+	toColumn: dimension_city.CityKey
+

@@ -11,6 +11,8 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_QueryOrder = ["DatabaseQuery"]
 
+annotation PBI_ProTooling = ["RemoteModeling"]
+
 ref table dimension_employee
 ref table dimension_city
 ref table dimension_customer
