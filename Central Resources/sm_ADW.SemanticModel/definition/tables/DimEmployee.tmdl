@@ -292,9 +292,10 @@ table DimEmployee
 				let
 				  Source = Sql.Database("pragmaticworkspublic.database.windows.net", "AdventureWorksDW"),
 				  #"Navigation 1" = Source{[Schema = "dbo", Item = "DimEmployee"]}[Data],
-				  #"Removed columns" = Table.RemoveColumns(#"Navigation 1", {"FactSalesQuota", "FactResellerSales", "DimSalesTerritory", "DimEmployee(ParentEmployeeKey)", "DimEmployee(EmployeeKey)", "EmployeePhoto"})
+				  #"Removed columns" = Table.RemoveColumns(#"Navigation 1", {"FactSalesQuota", "FactResellerSales", "DimSalesTerritory", "DimEmployee(ParentEmployeeKey)", "DimEmployee(EmployeeKey)", "EmployeePhoto"}),
+				  #"Filtered rows" = Table.SelectRows(#"Removed columns", each ([ParentEmployeeKey] = 3))
 				in
-				  #"Removed columns"
+				  #"Filtered rows"
 
 	annotation PBI_ResultType = Table
 
